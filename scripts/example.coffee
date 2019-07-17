@@ -89,9 +89,9 @@ module.exports = (robot) ->
   #    robot.send "今日はハグの日ですよ！"
   #)
  
-  send = (room, msg) ->
-    response = new robot.Response(robot, {user : {id : -1, name : room}, text : "none", done : false}, [])
-    response.send msg
+  #send = (room, msg) ->
+  #  response = new robot.Response(robot, {user : {id : -1, name : room}, text : "none", done : false}, [])
+  #  response.send msg
  
   #new cronJob('5 * * * * *', () ->
   #  send 'apitest', "current time is 00."
@@ -102,8 +102,3 @@ module.exports = (robot) ->
     setTimeout () ->
       res.send "アシリパ？はぁ？誰？"
     , 5 * 1000
-
-  robot.router.post '/home-apitest/room/:room', (res) ->
-    room   = "apitest"
-    robot.messageRoom room, "I have a secret"
-
