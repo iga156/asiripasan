@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+npm install
+export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
+
+export HUBOT_IDOBATA_API_TOKEN=94dc3fcc3821da3791251d0c30c6bb9a04e0bf45515c8545bcb77d91ec030f73
+
+exec node_modules/.bin/hubot --name "asiripasan" "$@"
