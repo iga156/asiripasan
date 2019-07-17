@@ -19,7 +19,7 @@ module.exports = (robot) ->
 
   # サポート系
   robot.hear /help/i, (res) ->
-    res.send "javadoc, eclipse, 正規表現, 技術トレンド, ランチ, bot とか打ってみて"
+    res.send "javadoc, eclipse, 正規表現, 技術トレンド, ランチ, bot testとか打ってみて"
     res.send "URL で一覧も表示するよ"
 
   robot.hear /javadoc/i, (res) ->
