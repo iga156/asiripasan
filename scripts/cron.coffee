@@ -9,7 +9,7 @@ module.exports = (robot) ->
 
   # Crontabの設定方法と基本一緒 *(sec) *(min) *(hour) *(day) *(month) *(day of the week)
   # #your_channelと言う部屋に、平日の18:30時に実行
-  #new cronJob('10 * * * * *', () ->
-  #  send 'testroom', "そろそろ帰る準備をしよう"
-  #).start()
+  new cronJob('0 5 * * * *', () ->
+    send 9630, "今日も一日がんばりましょう！"
+  ).start()
 
