@@ -58,46 +58,7 @@ module.exports = (robot) ->
               hubotスクリプトリファレンス：https://github.com/hubotio/hubot/blob/master/docs/scripting.md \n
               お試しチャットボット：https://landbot.io/u/H-195931-G67XKP8XDCUGQ73Y/index.html (user:sky, pass:leaf2019)"
 
-  # 定期起動系
-  # Crontabの設定方法と基本一緒 *(sec) *(min) *(hour) *(day) *(month) *(day of the week)
-  #send = (channel, msg) ->
-  #  robot.send {room: channel}, msg
-  #send = (msg) ->
-  #  robot.send msg
-
-  #new cronJob('0 00 09 * * 1-5', () ->
-  #new cronJob('30 * * * * *', () ->
-  #  send '#lounge', "@all さあ、今日も一日頑張ろう！！"
-  #).start()
-
-  #new cronJob('0 00 12 * * 1-5', () ->
-  #new cronJob('10 * * * * *', () ->
-  #  send 'lounge', "ランチの時間だよ！！"
-  #).start()
-
-  #new cronJob('0 0 12 * * 1-5', () ->
-  #new cronJob('5 * * * * *', () ->
-  #   send '#apitest', "@all そろそろ帰る準備をしよう"
-  #).start()
-
   # その他
-  #cronjob = new cronJob(
-  #  cronTime: "5 * * * * *"    # 実行時間
-  #  start:    true                # すぐにcronのjobを実行するか
-  #  timeZone: "Asia/Tokyo"        # タイムゾーン指定
-  #  onTick: ->                    # 時間が来た時に実行する処理
-  #    robot.send "今日はハグの日ですよ！"
-  #)
- 
-  #send = (room, msg) ->
-  #  response = new robot.Response(robot, {user : {id : -1, name : room}, text : "none", done : false}, [])
-  #  response.send msg
- 
-  #new cronJob('5 * * * * *', () ->
-  #  send 'apitest', "current time is 00."
-  #  console.log('You will see this message every second');
-  #).start()
-
   robot.hear /.*アシリパ.*/i, (res) ->
     setTimeout () ->
       res.send "アシリパ？はぁ？誰？"
