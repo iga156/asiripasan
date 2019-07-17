@@ -59,7 +59,7 @@ module.exports = (robot) ->
               お試しチャットボット：https://landbot.io/u/H-195931-G67XKP8XDCUGQ73Y/index.html (user:sky, pass:leaf2019)"
 
   # その他
-  robot.hear /.*アシリパ.*/i, (res) ->
-    setTimeout () ->
-      res.send "アシリパ？はぁ？誰？"
-    , 5 * 1000
+  #robot.hear /.*アシリパ.*/i, (res) ->
+  #  setTimeout () ->
+  #    res.send "アシリパ？はぁ？誰？"
+  #  , 5 * 1000
