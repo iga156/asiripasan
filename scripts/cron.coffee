@@ -1,6 +1,5 @@
 # room id
-creatingRoomId = 7655
-
+creatingRoomId  = 7655
 localtestRoomId = 9630
 
 #roomId = creatingRoomId
@@ -20,8 +19,7 @@ module.exports = (robot) ->
   # 挨拶関連
   #######################################################################################
   # 開始　月曜日
-  #new cronJob('0 0 9 * * 1', () ->
-  new cronJob('0 45 10 * * *', () ->
+  new cronJob('0 0 9 * * 1', () ->
     send roomId, "一週間がんばりましょう！"
   ).start()
 
