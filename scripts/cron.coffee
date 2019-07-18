@@ -1,3 +1,6 @@
+
+random = require('hubot').Response::random
+
 # room id
 creatingRoomId  = 7655
 localtestRoomId = 9630
@@ -20,27 +23,49 @@ module.exports = (robot) ->
   #######################################################################################
   # 開始　月曜日
   new cronJob('0 0 9 * * 1', () ->
-    send roomId, "一週間がんばりましょう！"
+    say = random [
+      '一週間がんばりましょう！',
+      'また一週間始まりましたね。頑張りましょう！'
+    ]
+    send roomId, say
   ).start()
 
   # 開始　平日
   new cronJob('0 0 9 * * 2-5', () ->
-    send roomId, "今日も一日がんばりましょう！"
+    say = random [
+      '今日も一日がんばりましょう！',
+      'おはようございます！'
+    ]
+    send roomId, say
   ).start()
 
   # お昼　平日
   new cronJob('0 0 12 * * 1-5', () ->
-    send roomId, "お昼！"
+  #new cronJob('10 * * * * *', () ->
+    say = 'お昼！' + random [
+      'ヒンナヒンナ',
+      ''
+    ]
+    send roomId, say
   ).start()
 
   # 終了　平日
-  new cronJob('0 0 18 * * 2-5', () ->
-    send roomId, "今日も一日お疲れ様でした！"
+  new cronJob('0 0 18 * * 1-4', () ->
+    say = random [
+      '今日も一日お疲れ様でした！',
+      'お疲れ様でした！',
+      'お疲れ様でした！たまには定時退社しましょう'
+    ]
+    send roomId, say
   ).start()
 
   # 終了金曜　
   new cronJob('0 0 18 * * 5', () ->
-    send roomId, "一週間お疲れ様でした！"
+    say = random [
+      '一週間お疲れ様でした！',
+      '一週間疲れましたね・・・'
+    ]
+    send roomId, say
   ).start()
 
   #######################################################################################
@@ -52,6 +77,6 @@ module.exports = (robot) ->
   ).start()
 
   # 定期代申請は毎月25日まで
-  new cronJob('0 0 10 24 * *', () ->
+  new cronJob('0 0 10 23 * *', () ->
     send roomId, "定期代申請は毎月25日までにお願いします！"
   ).start()
